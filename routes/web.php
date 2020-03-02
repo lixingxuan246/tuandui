@@ -27,4 +27,12 @@ Route::prefix('good')->group(function(){
     Route::get('/','GoodController@index');
 });
 
-
+//分类
+Route::prefix('type')->group(function(){
+    Route::get('/create','TypeController@create');
+    Route::post('/store','TypeController@store');
+    Route::get('/','TypeController@index');
+    Route::get('/edit/{id}','TypeController@edit');
+    Route::post('/update/{id}','TypeController@update');
+    Route::get('/destroy/{id}','TypeController@destroy');
+});
