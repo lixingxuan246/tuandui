@@ -11,13 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    $name="1908李";
-    return view('welcome',['name'=>$name]);
+// Route::get('/', function () {
+//     $name="1908李";
+//     return view('welcome',['name'=>$name]);
+// });
+
+
+// Route::get('/add', function () {
+
+//     return view('add.add');
+// });
+
+
+Route::prefix('good')->group(function(){
+    Route::get('/','GoodController@index');
 });
 
 
-Route::get('/add', function () {
-
-    return view('add.add');
-});
