@@ -27,4 +27,12 @@ Route::prefix('good')->group(function(){
     Route::get('/','GoodController@index');
 });
 
+Route::prefix('admin')->middleware('login')->group(function(){
 
+Route::get('create','AdminController@create');//添加页面
+Route::post('store','AdminController@store');//执行添加
+Route::get('index','AdminController@index');//首页
+Route::get('destroy/{id}','AdminController@destroy');//删除
+});
+Route::view('/login','login');//登录页面
+Route::post('/logindo','loginController@logindo');//验证登录
