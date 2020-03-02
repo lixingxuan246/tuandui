@@ -27,6 +27,7 @@ Route::prefix('good')->group(function(){
     Route::get('/','GoodController@index');
 });
 
+ 
 Route::prefix('admin')->middleware('login')->group(function(){
 
 Route::get('create','AdminController@create');//添加页面
@@ -36,3 +37,14 @@ Route::get('destroy/{id}','AdminController@destroy');//删除
 });
 Route::view('/login','login');//登录页面
 Route::post('/logindo','loginController@logindo');//验证登录
+ 
+//分类
+Route::prefix('type')->group(function(){
+    Route::get('/create','TypeController@create');
+    Route::post('/store','TypeController@store');
+    Route::get('/','TypeController@index');
+    Route::get('/edit/{id}','TypeController@edit');
+    Route::post('/update/{id}','TypeController@update');
+    Route::get('/destroy/{id}','TypeController@destroy');
+});
+ 
