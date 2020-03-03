@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Good;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 
 class GoodController extends Controller
 {
@@ -11,10 +11,10 @@ class GoodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function create()
     {
         //
-        return view('good/index');
+        return view('good/create');
     }
 
 
@@ -31,7 +31,7 @@ public function upload($filename){
     }
 
 
-    public function insert(){
+    public function store(){
         $data = request()->except('_token');
         if (request()->hasFile('good_img')){
             $data['good_img']=$this->upload('good_img');
@@ -41,35 +41,14 @@ public function upload($filename){
         $res = Good::create($data);
         // dd($res);
         if($res){
-            return redirect('good/list');
+            return redirect('good/index');
         }
     }
 
     //展示试图
-    public function list(){
+    public function index(){
         $res = good::get();
-        return view('good/list',['res'=>$res]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('good/index',['res'=>$res]);
     }
 
     /**
@@ -132,7 +111,7 @@ public function upload($filename){
         //
         $res=good::destroy($id);
         if($res){
-           return redirect('good/list');
+           return redirect('good/index');
         }
     }
 }
