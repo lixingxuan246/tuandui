@@ -55,4 +55,15 @@ Route::prefix('type')->group(function(){
     Route::post('/update/{id}','TypeController@update');
     Route::get('/destroy/{id}','TypeController@destroy');
 });
+<<<<<<< HEAD
 
+=======
+ 
+//品牌
+Route::get('/brand/create','BrandController@create');
+Route::post('/brand/store','BrandController@store');
+Route::get('brand','BrandController@index');
+Route::get('/brand/edit/{id}','BrandController@edit');
+Route::post('/brand/update/{id}','BrandController@update');
+Route::get('/brand/destroy/{id}','BrandController@destroy');
+>>>>>>> 2b833fba74642c37fbef7629ca393c67aac6590e
