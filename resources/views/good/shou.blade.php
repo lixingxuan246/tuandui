@@ -19,7 +19,7 @@
    @csrf
        <input type="submit" value="商品">
 
-   </form>   <form action="{{url('/type')}}" method="get" accept-charset="utf-8">
+   </form>   <form action="{{url('/brand/index')}}" method="get" accept-charset="utf-8">
     @csrf
        <input type="submit" value="品牌">
 

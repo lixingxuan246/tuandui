@@ -8,6 +8,7 @@
     <script src="/static/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <a href="{{url('/brand/create')}}">品牌添加</a>
 <table class="table">
     <thead>
         <tr>
