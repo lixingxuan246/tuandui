@@ -48,9 +48,9 @@
 
 
 
-        <td><img src="{{env('UPLOAD_URL')}}{{$v->good_img}}" width="40" height="40"></td>
+        <td><img src="{{env('UPLOAD_URL')}}{{$v->good_img}}"  width="40" height="40"></td>
         <td>
-        <!-- <a href="{{url('article/edit/'.$v->a_id)}}">编辑</a> -->
+        <a href="{{url('good/edit/'.$v->good_id)}}">编辑</a>
 <a href="{{url('good/destroy/'.$v->good_id)}}" >删除</a>
         </td>
     </tr>

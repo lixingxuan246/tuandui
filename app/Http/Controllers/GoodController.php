@@ -92,6 +92,8 @@ public function upload($filename){
     public function edit($id)
     {
         //
+        $res = good::where('good_id',$id)->first();
+        return view('good/upload',['res'=>$res]);
     }
 
     /**
@@ -104,7 +106,20 @@ public function upload($filename){
     public function update(Request $request, $id)
     {
         //
+         $user=$request->except('_token');
+        if ($request->hasFile('good_img')) {
+            $user['good_img'] = $this->upload('good_img');
+            // dd($img);
+
+          }
+        // $res = DB::table("people")->where('p_id',$id)->update($user);
+        $res=good::where('good_id',$id)->update($user);
+        // dd($res);
+        if($res!==false){
+            return redirect("good/list");
+
     }
+}
 
     /**
      * Remove the specified resource from storage.

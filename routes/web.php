@@ -28,12 +28,14 @@ Route::prefix('good')->group(function(){
     Route::post('/insert','GoodController@insert');
     Route::get('/list','GoodController@list');
     Route::get('/destroy/{id}','GoodController@destroy');
+    Route::get('/edit/{id}','GoodController@edit');
+    Route::post('/update/{id}','GoodController@update');
 
 
 
 });
 
- 
+
 Route::prefix('admin')->middleware('login')->group(function(){
 
 Route::get('create','AdminController@create');//添加页面
@@ -43,7 +45,7 @@ Route::get('destroy/{id}','AdminController@destroy');//删除
 });
 Route::view('/login','login');//登录页面
 Route::post('/logindo','loginController@logindo');//验证登录
- 
+
 //分类
 Route::prefix('type')->group(function(){
     Route::get('/create','TypeController@create');
@@ -53,4 +55,4 @@ Route::prefix('type')->group(function(){
     Route::post('/update/{id}','TypeController@update');
     Route::get('/destroy/{id}','TypeController@destroy');
 });
- 
+
