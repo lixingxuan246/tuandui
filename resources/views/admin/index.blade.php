@@ -12,6 +12,7 @@
   <input type="text" name="name" value="{{$name}}" placeholder="请输入用户名">
   <input type="submit" value="搜索">
 </form>
+<a href="{{url('/admin/create')}}">管理员添加</a>
 <table class="table">
  
 <thead>

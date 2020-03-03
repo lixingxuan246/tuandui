@@ -13,6 +13,7 @@
         <input type="text" name="type_name"  placeholder="请输入分类名称" />
         <input type="submit" value="搜索" />
 </form>
+<a href="{{url('/type/create')}}">分类添加</a>
 <table class="table">
 
     <thead>
