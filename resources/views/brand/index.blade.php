@@ -9,9 +9,15 @@
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <a href="{{url('/brand/create')}}">品牌添加</a>
 >>>>>>> eaf7fadbfec4bf69b2a3d7341d6e1276c68a4930
+=======
+
+    <a href="{{url('/brand/create')}}">品牌添加</a>
+
+>>>>>>> xingxuan
 <table class="table">
     <thead>
         <tr>
