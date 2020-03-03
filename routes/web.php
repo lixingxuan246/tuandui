@@ -21,10 +21,16 @@
 
 //     return view('add.add');
 // });
-
+Route::get('/','IndexController@index');
 
 Route::prefix('good')->group(function(){
-    Route::get('/','GoodController@index');
+    Route::post('/','GoodController@index');
+    Route::post('/insert','GoodController@insert');
+    Route::get('/list','GoodController@list');
+    Route::get('/destroy/{id}','GoodController@destroy');
+
+
+
 });
 
  
